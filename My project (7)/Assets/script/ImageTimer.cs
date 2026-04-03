@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class ImageTimer : MonoBehaviour
 {
-    public float MaxTime;
+    [SerializeField]private float MaxTime;
     public bool Tick;
-    public Image Img;
+    private Image Img;
     private float CurrentTime;
 
     // Start is called before the first frame update

@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]private int peasantCount;
     [SerializeField]private int warriorsCount;
     [SerializeField]private int wheatCount;
-    [SerializeField]private int wheatPerPeasant;
+    public int wheatPerPeasant;
     [SerializeField]private int wheatToWarriors;
     [SerializeField]private int wheatToPeasant;
     [SerializeField]private int peasantCost;
@@ -43,10 +43,7 @@ public class GameManager : MonoBehaviour
     private bool flag3 = true;
     private int warr;
     private int a = 0;
-   // private int wheatCount = 0;
 
-
-    // Start is called before the first frame update
     void Start()
     {
         UpdateText();
@@ -194,8 +191,8 @@ public class GameManager : MonoBehaviour
               }
               if (raidTimer <= 0)
               {
-                    raidMaxTimer += 10;
-                    raidTimer = raidMaxTimer;
+                  raidMaxTimer += 10;
+                  raidTimer = raidMaxTimer;
                   warriorsCount -= nextRaid;
                   nextRaid += raidIncrease;
                   Wave++;
@@ -242,7 +239,7 @@ public class GameManager : MonoBehaviour
         warriorTimer = warriorCreateTime;
         warriorButton.interactable= false;
     }
-     private void GameOverText()
+    private void GameOverText()
     {
         GameoverText.text = "���������� ��������� �����:" + a + "\n" + "���������� ������ ������:" + warr;
     }

@@ -7,7 +7,7 @@ public class audiotimer : MonoBehaviour
     [SerializeField] private float raidMaxTimer;
     private float raidTimer;
     private AudioSource War;
-    // Start is called before the first frame update
+
     void Start()
     {
         raidTimer = raidMaxTimer;
