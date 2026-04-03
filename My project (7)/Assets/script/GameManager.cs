@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]private Text resurseText;
     [SerializeField]private Text RaidCountText;
     [SerializeField]private Text GameoverText;
-    [SerializeField] private Text GamewinText;
+    [SerializeField]private Text GamewinText;
     [SerializeField]private int peasantCount;
     [SerializeField]private int warriorsCount;
     [SerializeField]private int wheatCount;
@@ -244,11 +244,11 @@ public class GameManager : MonoBehaviour
     }
      private void GameOverText()
     {
-        GameoverText.text = "Количество полученых очков:" + a + "\n" + "Количество убитых врагов:" + warr;
+        GameoverText.text = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ:" + a + "\n" + "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ:" + warr;
     }
     private void GameWinText()
     {
-        GamewinText.text ="Отлично ты смог пройти игру"+ "\n" + "Количество полученых очков:" + a + "\n" + "Количество убитых врагов:" + warr;
+        GamewinText.text ="пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ"+ "\n" + "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ:" + a + "\n" + "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ:" + warr;
     }
     private void UpdateText()
     {
