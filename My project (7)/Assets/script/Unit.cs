@@ -2,12 +2,21 @@ using UnityEngine;
 
 public class Unit : MonoBehaviour
 {
+   [SerializeField] private int _startPeasantCount = 3;
+   [SerializeField] private int _startWarriorCount = 0;
    public int _pesantCount{get;private set;}
    public int _warriorCount{get;private set;}
+   public int TotalWarriorsCreated { get; private set; }
 
    public System.Action OnUnitsChanged;//события для того чтобы передовать информацию о юнитах
 
-   public void AddPesant()
+    void Start()
+    {
+        _pesantCount = _startPeasantCount;
+        _warriorCount = _startWarriorCount;
+        OnUnitsChanged?.Invoke();
+    }
+    public void AddPesant()
     {
         _pesantCount++;
         OnUnitsChanged?.Invoke();
@@ -15,17 +24,16 @@ public class Unit : MonoBehaviour
     public void AddWarrior()
     {
         _warriorCount++;
+        TotalWarriorsCreated++;
         OnUnitsChanged?.Invoke();
     }
-    public bool RemoveWarrior(int amount)
+    public void RemoveWarrior(int amount)
     {
-        if(_warriorCount >= amount)
-        {
-            _warriorCount -=amount;
-            OnUnitsChanged?.Invoke();
-            return true;
-        }
-        return false;
+
+        _warriorCount -=amount;
+         OnUnitsChanged?.Invoke();
+
+
     }
 
 }

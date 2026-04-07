@@ -1,12 +1,11 @@
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CreatePasent : MonoBehaviour
-{
+public class CreateWarrior : MonoBehaviour
+{    
     [SerializeField]private Unit unit;
     [SerializeField]private Resourse resources;
-    [SerializeField]private int _peasentCost;
+    [SerializeField]private int _warriorCost;
     [SerializeField]private float _createTimer;
     [SerializeField]private Image _createTimerImage;
     [SerializeField]private Button _btnCreate;
@@ -27,7 +26,7 @@ public class CreatePasent : MonoBehaviour
             }
         }
         //обновляем кнопку
-        bool canAfford = resources._wheatCount >= _peasentCost && !_isProducing;
+        bool canAfford = resources._wheatCount >= _warriorCost && !_isProducing;
         if (_btnCreate.interactable != canAfford)
             _btnCreate.interactable = canAfford;
         
@@ -35,7 +34,7 @@ public class CreatePasent : MonoBehaviour
 
     public void StartCreate()
     {
-        if (resources.SpendWheat(_peasentCost))
+        if (resources.SpendWheat(_warriorCost))
         {
             _isProducing = true;
             _currentTimer = _createTimer;
@@ -47,7 +46,7 @@ public class CreatePasent : MonoBehaviour
     private void FinishCreate()
     {
         _isProducing = false;
-        unit.AddPesant();
+        unit.AddWarrior();
         _currentTimer = -1f;
         _createTimerImage.fillAmount = 0f;
 
