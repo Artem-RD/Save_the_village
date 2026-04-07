@@ -12,7 +12,7 @@ public class GameOverScript : MonoBehaviour
     }
     public void RestartGame()
     {
-        //SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
-        SceneManager.LoadScene(SceneManager.GetSceneAt(0).name);
+        Time.timeScale = 1;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

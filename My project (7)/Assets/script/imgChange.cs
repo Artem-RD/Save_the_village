@@ -12,6 +12,7 @@ public class imgChange : MonoBehaviour
     public Sprite pic4;
     public Image im;
     public Image im1;
+    private bool Clik;
     void Start()
     {
          
@@ -52,4 +53,19 @@ public class imgChange : MonoBehaviour
             return;
         }
     }
+
+        public void Pause()
+    {
+        if (!Clik)
+        {
+            Time.timeScale = 0f;
+            Clik = true;
+        }
+        else
+        {
+            Time.timeScale = 1f;
+            Clik = false;
+        }
+    }
+
 }
